@@ -1,0 +1,28 @@
+[
+    {
+        "question": "散歩中、愛犬が突然立ち止まりました。",
+        "choices": [
+            {
+                "text": "少し待つ",
+                "scores": {
+                    "refusal": 1,
+                    "immovable": 1
+                }
+            },
+            {
+                "text": "おやつで誘う",
+                "scores": {
+                    "refusal": 2,
+                    "immovable": 1
+                }
+            },
+            {
+                "text": "私も諦める",
+                "scores": {
+                    "refusal": 3,
+                    "immovable": 3
+                }
+            }
+        ]
+    }
+]
