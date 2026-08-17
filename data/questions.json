@@ -1,28 +1,276 @@
-[
+{
+  "categories": [
     {
-        "question": "散歩中、愛犬が突然立ち止まりました。",
-        "choices": [
-            {
-                "text": "少し待つ",
-                "scores": {
-                    "refusal": 1,
-                    "immovable": 1
-                }
-            },
-            {
-                "text": "おやつで誘う",
-                "scores": {
-                    "refusal": 2,
-                    "immovable": 1
-                }
-            },
-            {
-                "text": "私も諦める",
-                "scores": {
-                    "refusal": 3,
-                    "immovable": 3
-                }
-            }
-        ]
+      "id": "refusal",
+      "name": "拒否柴度",
+      "icon": "🪨"
+    },
+    {
+      "id": "immovable",
+      "name": "不動柴度",
+      "icon": "🗿"
+    },
+    {
+      "id": "ignore",
+      "name": "無視柴度",
+      "icon": "🙈"
+    },
+    {
+      "id": "tsun",
+      "name": "ツン柴度",
+      "icon": "🦊"
+    },
+    {
+      "id": "emperor",
+      "name": "皇帝柴度",
+      "icon": "👑"
+    },
+    {
+      "id": "stubborn",
+      "name": "頑固柴度",
+      "icon": "🧠"
+    },
+    {
+      "id": "sniff",
+      "name": "クン活柴度",
+      "icon": "👃"
+    },
+    {
+      "id": "guard",
+      "name": "番犬柴度",
+      "icon": "🐕‍🦺"
+    },
+    {
+      "id": "hunt",
+      "name": "狩猟柴度",
+      "icon": "🐕"
+    },
+    {
+      "id": "touch",
+      "name": "触るな柴度",
+      "icon": "✋"
     }
-]
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "refusal",
+      "question": "散歩中、行きたい方向と違う方向へ行こうとすると？",
+      "choices": [
+        { "text": "気にせずついてくる", "score": 0 },
+        { "text": "引っ張れば歩く", "score": 1 },
+        { "text": "おやつで誘導しないと歩かない", "score": 2 },
+        { "text": "飼い主が折れるまで抵抗する", "score": 3 }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "refusal",
+      "question": "「お風呂だよ」と声をかけたら？",
+      "choices": [
+        { "text": "素直についてくる", "score": 0 },
+        { "text": "少し嫌そうにする", "score": 1 },
+        { "text": "逃げて隠れる", "score": 2 },
+        { "text": "命がけで反撃してくる", "score": 3 }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "immovable",
+      "question": "飼い主のベッドからどいてほしいときは？",
+      "choices": [
+        { "text": "飼い主が来たらすぐに退く", "score": 0 },
+        { "text": "言われて渋々退く", "score": 1 },
+        { "text": "押すと威嚇するが退く", "score": 2 },
+        { "text": "何をしても狸寝入り", "score": 3 }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "immovable",
+      "question": "散歩中、愛犬が突然座り込んだら？",
+      "choices": [
+        { "text": "飼い主が歩けば歩き出す", "score": 0 },
+        { "text": "おやつで誘導すれば動く", "score": 1 },
+        { "text": "右にも左にも動かない", "score": 2 },
+        { "text": "抱っこして帰宅", "score": 3 }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "ignore",
+      "question": "名前を呼んだときは？",
+      "choices": [
+        { "text": "すぐ振り向く", "score": 0 },
+        { "text": "気が向けば振り向く", "score": 1 },
+        { "text": "耳をこちらに向けるだけ", "score": 2 },
+        { "text": "寝始める", "score": 3 }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "ignore",
+      "question": "「おいで」と呼ぶと？",
+      "choices": [
+        { "text": "ちゃんと来る", "score": 0 },
+        { "text": "少し遅れて来る", "score": 1 },
+        { "text": "ちらっと見るだけ", "score": 2 },
+        { "text": "別の部屋へ行く", "score": 3 }
+      ]
+    },
+    {
+      "id": 7,
+      "category": "tsun",
+      "question": "飼い主が帰宅したときは？",
+      "choices": [
+        { "text": "大喜びで駆け寄る", "score": 0 },
+        { "text": "普通に迎えてくれる", "score": 1 },
+        { "text": "少し離れて様子を見る", "score": 2 },
+        { "text": "寝てる", "score": 3 }
+      ]
+    },
+    {
+      "id": 8,
+      "category": "tsun",
+      "question": "自分から飼い主のそばに来たのに、撫でようとすると？",
+      "choices": [
+        { "text": "喜んで撫でられる", "score": 0 },
+        { "text": "普通に撫でさせる", "score": 1 },
+        { "text": "避ける", "score": 2 },
+        { "text": "威嚇する", "score": 3 }
+      ]
+    },
+    {
+      "id": 9,
+      "category": "emperor",
+      "question": "ご飯の時間が少し遅れたら？",
+      "choices": [
+        { "text": "静かに待つ", "score": 0 },
+        { "text": "少し気にする", "score": 1 },
+        { "text": "飼い主に催促する", "score": 2 },
+        { "text": "飼い主に襲い掛かる", "score": 3 }
+      ]
+    },
+    {
+      "id": 10,
+      "category": "emperor",
+      "question": "飼い主が決めたルールに対して？",
+      "choices": [
+        { "text": "ちゃんと従う", "score": 0 },
+        { "text": "ほぼ従う", "score": 1 },
+        { "text": "気分によって従う", "score": 2 },
+        { "text": "わざとらしく破る", "score": 3 }
+      ]
+    },
+    {
+      "id": 11,
+      "category": "stubborn",
+      "question": "愛犬のお気に入りの寝場所を変えようとすると？",
+      "choices": [
+        { "text": "特に気にしない", "score": 0 },
+        { "text": "少し気にする", "score": 1 },
+        { "text": "いつもの場所に戻ろうとする", "score": 2 },
+        { "text": "「ここが私の場所」と絶対に譲らない", "score": 3 }
+      ]
+    },
+    {
+      "id": 12,
+      "category": "stubborn",
+      "question": "一度「嫌だ」と思ったことは？",
+      "choices": [
+        { "text": "すぐ忘れる", "score": 0 },
+        { "text": "そのときだけ嫌がる", "score": 1 },
+        { "text": "しばらく覚えている", "score": 2 },
+        { "text": "一生根に持つ", "score": 3 }
+      ]
+    },
+    {
+      "id": 13,
+      "category": "sniff",
+      "question": "散歩中に気になる匂いを見つけたら？",
+      "choices": [
+        { "text": "ほとんど気にしない", "score": 0 },
+        { "text": "少し嗅いで先へ進む", "score": 1 },
+        { "text": "かなり念入りに嗅ぐ", "score": 2 },
+        { "text": "また戻って再度嗅ぐ", "score": 3 }
+      ]
+    },
+    {
+      "id": 14,
+      "category": "sniff",
+      "question": "散歩中のクン活の割合は？",
+      "choices": [
+        { "text": "1割", "score": 0 },
+        { "text": "3割", "score": 1 },
+        { "text": "6割", "score": 2 },
+        { "text": "9割", "score": 3 }
+      ]
+    },
+    {
+      "id": 15,
+      "category": "guard",
+      "question": "家の外から謎の音がしたら？",
+      "choices": [
+        { "text": "全然気にしない", "score": 0 },
+        { "text": "耳を動かして確認する", "score": 1 },
+        { "text": "音の方向をじっと見る", "score": 2 },
+        { "text": "吠えて飼い主に知らせる", "score": 3 }
+      ]
+    },
+    {
+      "id": 16,
+      "category": "guard",
+      "question": "インターホンが鳴ったら？",
+      "choices": [
+        { "text": "ほとんど反応しない", "score": 0 },
+        { "text": "少し気にする", "score": 1 },
+        { "text": "警戒する", "score": 2 },
+        { "text": "すぐに玄関にいって確認", "score": 3 }
+      ]
+    },
+    {
+      "id": 17,
+      "category": "hunt",
+      "question": "鳥や猫など、動いているものを見つけたら？",
+      "choices": [
+        { "text": "ほとんど気にしない", "score": 0 },
+        { "text": "少し目で追う", "score": 1 },
+        { "text": "追いかけようとする", "score": 2 },
+        { "text": "地の果てまで追いかける", "score": 3 }
+      ]
+    },
+    {
+      "id": 18,
+      "category": "hunt",
+      "question": "おもちゃを投げると？",
+      "choices": [
+        { "text": "あまり興味を示さない", "score": 0 },
+        { "text": "気が向けば追う", "score": 1 },
+        { "text": "かなりの勢いで追う", "score": 2 },
+        { "text": "捕まえて引きちぎる", "score": 3 }
+      ]
+    },
+    {
+      "id": 19,
+      "category": "touch",
+      "question": "撫でられる場所の好みは？",
+      "choices": [
+        { "text": "どこを触られてもOK", "score": 0 },
+        { "text": "少し好みがある", "score": 1 },
+        { "text": "かなりこだわりがある", "score": 2 },
+        { "text": "気分のいいときだけピンポイントで", "score": 3 }
+      ]
+    },
+    {
+      "id": 20,
+      "category": "touch",
+      "question": "撫でている途中で嫌になったら？",
+      "choices": [
+        { "text": "そのまま撫でられる", "score": 0 },
+        { "text": "避ける", "score": 1 },
+        { "text": "警告する", "score": 2 },
+        { "text": "噛みついてどこかへ行く", "score": 3 }
+      ]
+    }
+  ]
+}

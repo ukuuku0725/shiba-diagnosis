@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>生粋の柴度診断</title>
     <link rel="stylesheet" href="style.css">
-</head>git --version
+</head>
 <body>
 
     <h1>🐕 生粋の柴度診断</h1>
     <p>あなたの愛犬は、どれくらい生粋の柴？</p>
 
     <button id="startButton">診断スタート</button>
+
+    <!-- 診断画面 -->
+    <div id="quiz" style="display: none;">
+        <p id="questionNumber"></p>
+        <h2 id="questionText"></h2>
+        <div id="choices"></div>
+    </div>
 
     <script src="app.js"></script>
 </body>
