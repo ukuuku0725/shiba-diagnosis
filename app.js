@@ -11,13 +11,16 @@ const scores = {
     touch: 0
 };
 
-const startButton = document.getElementById("startButton");
-
-startButton.addEventListener("click", () => {
-    alert("診断を開始します！");
-});
+const resultTitles = [
+    './images/result_1.png',
+    './images/result_2.png',
+    './images/result_3.png',
+    './images/result_4.png',
+    './images/result_5.png'
+];
 
 let questions = [];
+let categories = [];
 let currentQuestion = 0;
 
 fetch("./data/questions.json")
@@ -26,18 +29,25 @@ fetch("./data/questions.json")
 
     // 質問データを取得
     questions = data.questions;
+    // カテゴリを取得
+    categories = data.categories
 
     console.log("JSON読み込み成功！");
     console.log(questions);
   })
+  
+  document.getElementById('startButton').addEventListener('click', () => {
 
-  // スタートボタン
-document.getElementById('startButton').addEventListener('click', () => {
-  document.getElementById('startButton').style.display = 'none';
-  document.getElementById('quiz').style.display = 'block';
+    // スタート画面を隠す
+    document.getElementById('start').style.display = 'none';
 
-  showQuestion();
+    // 診断画面を表示
+    document.getElementById('quiz').style.display = 'block';
+
+    // Q1を表示
+    showQuestion();
 });
+
 
 // 質問を表示
 function showQuestion() {
@@ -70,9 +80,109 @@ function showQuestion() {
         } else {
             console.log('診断終了！');
             console.log(scores);
-        }
+
+            showResult();
+       }
     });
 
     choicesElement.appendChild(button);
     });
+}
+
+function showResult() {
+
+    // 診断画面を隠す
+    document.getElementById('quiz').style.display = 'none';
+
+    // 結果画面を表示
+    document.getElementById('result').style.display = 'block';
+
+    // 合計点を計算
+    let totalScore = 0;
+
+    for (const categoryId in scores) {
+        totalScore += scores[categoryId];
+    }
+
+    // 柴度を計算
+    const shibaPercentage = Math.round((totalScore / 60) * 100);
+    const resultTitle = document.getElementById('resultTitle');
+    let medalLevel;
+    
+    if (shibaPercentage <= 20) {
+        medalLevel = 0;
+        resultIndex = 0;
+    } else if (shibaPercentage <= 40) {
+        medalLevel = 1;
+        resultIndex = 1;
+    } else if (shibaPercentage <= 60) {
+        medalLevel = 2;
+        resultIndex = 2;
+    } else if (shibaPercentage <= 80) {
+        medalLevel = 3;
+        resultIndex = 3;
+    } else {
+        medalLevel = 4;
+        resultIndex = 4;
+    }
+
+   resultTitle.src = resultTitles[resultIndex];
+
+    document.getElementById('medalImage').src =
+    `images/medal${medalLevel}.png`;
+
+    // 結果タイトルとコメント
+    let resultComment = '';
+
+    if (shibaPercentage <= 20) {
+        resultComment = 'まだまだ素直！これから柴の道を極めていこう。';
+
+    } else if (shibaPercentage <= 40) {
+        resultComment = '少しずつ柴らしさが顔を出してきています。';
+
+    } else if (shibaPercentage <= 60) {
+        resultComment = 'なかなかの柴っぷり！飼い主さんも油断できません。';
+
+    } else if (shibaPercentage <= 80) {
+        resultComment = 'かなりの柴！もう飼い主より自分の意思を優先しがち。';
+
+    } else {
+        resultComment = '見事な柴っぷり！自分の道を行く、それが柴。';
+    }
+
+    // 結果をHTMLに表示
+    document.getElementById('shibaPercentage').textContent =
+        `生粋の柴度：${shibaPercentage}%`;
+
+    document.getElementById('resultComment').textContent =
+        resultComment;
+
+
+    // カテゴリーごとの結果
+    const categoryResults = document.getElementById('categoryResults');
+
+    categoryResults.innerHTML = '';
+
+    for (const categoryId in scores) {
+
+        const category = categories.find(
+            category => category.id === categoryId
+        );
+
+        const result = document.createElement('p');
+
+        result.textContent =
+            `${category.icon} ${category.name}：${getStars(scores[categoryId])}`;
+
+        categoryResults.appendChild(result);
+    }
+}
+
+function getStars(score) {
+    if (score === 0) return '☆☆☆☆☆';
+    if (score <= 1) return '★☆☆☆☆';
+    if (score <= 2) return '★★☆☆☆';
+    if (score <= 3) return '★★★☆☆';
+    if (score <= 4) return '★★★★☆';
+    return '★★★★★';
 }

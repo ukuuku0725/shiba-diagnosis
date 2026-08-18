@@ -1,11 +1,153 @@
+
 body {
-    font-family: sans-serif;
-    text-align: center;
-    padding: 50px 20px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background-color: #f8f3e8;
+    color: #4a3a2a;
 }
 
-button {
-    padding: 15px 30px;
+#start {
+    text-align: center;
+}
+
+#start h1 img {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#startButton {
+    font-family: 'Zen Maru Gothic', sans-serif;
     font-size: 18px;
+    font-weight: 700;
+
+    padding: 14px 45px;
+
+    color: #fff;
+    background: #6b5035;
+
+    border: 2px solid #4a3625;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 0 #3b2a1c;
+
     cursor: pointer;
+
+    transition: all 0.15s ease;
+}
+
+#startButton:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #3b2a1c;
+}
+
+#startButton:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+#choices button {
+    display: block;
+    width: 100%;
+
+    margin: 12px 0;
+    padding: 14px 18px;
+
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #4a3625;
+    background: rgba(255, 250, 240, 0.9);
+
+    border: 2px solid #8b6f47;
+    border-radius: 8px;
+
+    box-shadow: 0 3px 0 #8b6f47;
+
+    cursor: pointer;
+
+    transition: all 0.15s ease;
+}
+
+#choices button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #8b6f47;
+}
+
+#choices button:active {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+
+/* 結果画面 */
+#result {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 20px;
+    font-family: 'Zen Maru Gothic', serif;
+    text-align: center;
+    background-image: url("./images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 結果タイトル */
+#result h2 {
+    font-size: 24px;
+    margin: 0 0 20px;
+}
+
+#resultTitle {
+    width: 300px !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+}
+
+#shibaPercentage {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+#resultComment {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* 柴度％ */
+#shibaPercentage {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0 30px;
+}
+
+/* 柴度メダル */
+#medalImage {
+    display: block;
+    width: 250px;
+    height: auto;
+    margin: 10px auto 20px;
+}
+
+/* カテゴリー結果 */
+#categoryResults {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 各カテゴリー */
+#categoryResults p {
+    margin: 0;
+    padding: 12px 15px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    font-size: 18px;
+    text-align: left;
 }
