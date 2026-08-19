@@ -30,6 +30,7 @@ const medalLevels = [
 let questions = [];
 let categories = [];
 let currentQuestion = 0;
+let totalScore = 0;
 
 fetch("./data/questions.json")
   .then(response => response.json())
@@ -88,7 +89,6 @@ function showQuestion() {
         } else {
             console.log('診断終了！');
             console.log(scores);
-
             showResult();
        }
     });
@@ -104,9 +104,6 @@ function showResult() {
 
     // 結果画面を表示
     document.getElementById('result').style.display = 'block';
-
-    // 合計点を計算
-    let totalScore = 0;
 
     for (const categoryId in scores) {
         totalScore += scores[categoryId];
@@ -186,4 +183,22 @@ document.getElementById('backToTopButton').addEventListener('click', () => {
     // スタート画面を表示
     document.getElementById('start').style.display = 'block';
 
+    resetDiagnosis()
+
 });
+
+function resetDiagnosis() {
+    currentQuestion = 0;
+    totalScore = 0;
+
+    scores.refusal = 0;
+    scores.immovable = 0;
+    scores.ignore = 0;
+    scores.tsun = 0;
+    scores.emperor = 0;
+    scores.stubborn = 0;
+    scores.sniff = 0;
+    scores.guard = 0;
+    scores.hunt = 0;
+    scores.touch = 0;
+}
