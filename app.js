@@ -19,6 +19,14 @@ const resultTitles = [
     './images/result_5.png'
 ];
 
+const medalLevels = [
+    './images/medal1.png',
+    './images/medal2.png',
+    './images/medal3.png',
+    './images/medal4.png',
+    './images/medal5.png'
+];
+
 let questions = [];
 let categories = [];
 let currentQuestion = 0;
@@ -35,7 +43,7 @@ fetch("./data/questions.json")
     console.log("JSON読み込み成功！");
     console.log(questions);
   })
-  
+
   document.getElementById('startButton').addEventListener('click', () => {
 
     // スタート画面を隠す
@@ -106,49 +114,32 @@ function showResult() {
 
     // 柴度を計算
     const shibaPercentage = Math.round((totalScore / 60) * 100);
-    const resultTitle = document.getElementById('resultTitle');
-    let medalLevel;
     
-    if (shibaPercentage <= 20) {
-        medalLevel = 0;
-        resultIndex = 0;
-    } else if (shibaPercentage <= 40) {
-        medalLevel = 1;
-        resultIndex = 1;
-    } else if (shibaPercentage <= 60) {
-        medalLevel = 2;
-        resultIndex = 2;
-    } else if (shibaPercentage <= 80) {
-        medalLevel = 3;
-        resultIndex = 3;
-    } else {
-        medalLevel = 4;
-        resultIndex = 4;
-    }
-
-   resultTitle.src = resultTitles[resultIndex];
-
-    document.getElementById('medalImage').src =
-    `images/medal${medalLevel}.png`;
-
     // 結果タイトルとコメント
+    const medalLevel = document.getElementById('medalImage');
+    const resultTitle = document.getElementById('resultTitle');
     let resultComment = '';
+    let resultIndex = 0;
 
     if (shibaPercentage <= 20) {
+        resultIndex = 0;
         resultComment = 'まだまだ素直！これから柴の道を極めていこう。';
-
     } else if (shibaPercentage <= 40) {
+        resultIndex = 1;
         resultComment = '少しずつ柴らしさが顔を出してきています。';
-
     } else if (shibaPercentage <= 60) {
+        resultIndex = 2;
         resultComment = 'なかなかの柴っぷり！飼い主さんも油断できません。';
-
     } else if (shibaPercentage <= 80) {
+        resultIndex = 3;
         resultComment = 'かなりの柴！もう飼い主より自分の意思を優先しがち。';
-
     } else {
+        resultIndex = 4;
         resultComment = '見事な柴っぷり！自分の道を行く、それが柴。';
     }
+
+    medalLevel.src = medalLevels[resultIndex];
+    resultTitle.src = resultTitles[resultIndex];
 
     // 結果をHTMLに表示
     document.getElementById('shibaPercentage').textContent =
