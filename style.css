@@ -46,6 +46,14 @@ body {
     box-shadow: none;
 }
 
+.notice {
+  margin: 100px auto;
+  padding: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
 #choices button {
     display: block;
     width: 100%;
