@@ -177,3 +177,13 @@ function getStars(score) {
     if (score <= 4) return '★★★★☆';
     return '★★★★★';
 }
+
+document.getElementById('backToTopButton').addEventListener('click', () => {
+
+    // 結果画面を隠す
+    document.getElementById('result').style.display = 'none';
+
+    // スタート画面を表示
+    document.getElementById('start').style.display = 'block';
+
+});

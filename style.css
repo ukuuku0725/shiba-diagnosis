@@ -151,3 +151,37 @@ body {
     font-size: 18px;
     text-align: left;
 }
+
+/* トップに戻るボタン */
+#backToTopButton {
+    display: block;
+    margin: 30px auto 20px;
+
+    padding: 12px 35px;
+
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #fff;
+    background: #6b5035;
+
+    border: 2px solid #4a3625;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 0 #3b2a1c;
+
+    cursor: pointer;
+
+    transition: all 0.15s ease;
+}
+
+#backToTopButton:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #3b2a1c;
+}
+
+#backToTopButton:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
